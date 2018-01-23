@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+<div class="mhn-news-app">
+
+  <div class="header"><div class="clearfix"><a href="#navi" class="pull-left"><i class="fa fa-bars"></i></a><span class="title" id="title">Portfolio</span><a class="pull-right"><i class="fa fa-plus fplus" id="fplus"></i></a></div></div>
+
+  <div class="nano"><div class="nano-content"><div class="category-wrap"></div></div></div>
+
+  <div class="nav-overlay"></div>
+  <div class="navi"><div class="header"><h4>VS Rathore</h4></div><div class="links"><a href="javascript:void(0)"><i class="fa fa-user"></i> Profile</a><a href="javascript:void(0)"><i class="fa fa-briefcase"></i> Portfolio</a><a href="javascript:void(0)"><i class="fa fa-refresh"></i> Updates</a><a id="logout"><i class="fa fa-cogs"></i>LogOut</a></div></div>
+
+  <div id="myModal" class="modal">
+    <div id="modal-content" class="modal-content">
+      <div class="fhead">
+        <div id="fhtxt" class="fhtxt">BajajHind</div>
+        <span id="close" class="close fa fa-close faLink"></span>
+      </div>
+
+      <div class="formin">
+        <span id="unqid" style="display:none"></span>
+        <input type="text" id="fpar" name="fParticular" placeholder="Particular" style="display: none">
+        <input type="text" id="fdate" name="fDate" placeholder="Date">
+        <input type="text" id="fqty" name="fQty" placeholder="Quantity">
+        <input type="text" id="fprice" name="fPrice" placeholder="Price">
+        <select id="country" name="country"><option value="Buy">Buy</option><option value="Sell">Sell</option></select>
+        <!-- <input type="submit" value="Submit"> -->
+        <button id="fbtn" class="fbtn">Buy</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!--
+  <div id="superModal" class="modal" style="display:grid">
+    <div id="modal-content" class="loader-content">
+        <div id="loader" class="loader">Please wait..</div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+</div>
+  <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/firebase-firestore.js"></script>
+  <script src="js/test.js"></script>
+  <script src="js/summary.js"></script>
+
+</body>
+</html>
