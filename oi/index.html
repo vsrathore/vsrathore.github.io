@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>OI M Page</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+
+
+<div class="card">
+
+  <div class="heading">OI Tracker</div>
+
+  <div class="options">
+
+    <div id="selectOption" class="optionClass">
+      <select id="doption" class="scriptsBtn"></select>
+      <select id="moption" class="scriptsBtn"></select>
+      <select id="yoption" class="scriptsBtn"></select>
+      <button id="oiBtn" class="scriptsBtn button" type="button">Get OI Data</button>
+    </div>
+    <div id="mainOption" class="optionClass hiddenClass">
+      <select id="scripts" class="scriptsBtn mainSelect" onchange="changeFunction()"></select>
+      <select id="subscripts" class="scriptsBtn"></select>
+      <button id="scriptsBtn" class="scriptsBtn button" type="button" >Get OI</button>
+    </div>
+    <div class="notification" id="notification"></div>
+
+  </div>
+
+
+  <div class="loadingShow">
+
+    <div class="optionLoading">
+      <span class="demoLoading optionLoadingC"></span>
+      <span class="demoLoading optionLoadingC"></span>
+      <span class="demoLoading optionLoadingC"></span>
+    </div>
+
+    <div class="reportLoading">
+      <div class="sideLoading"> <span class="demoLoading"></span></div>
+      <div class="othersideLoading">
+        <span class="demoLoading"></span>
+        <span class="demoLoading"></span>
+        <span class="demoLoading"></span>
+        <span class="demoLoading"></span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="oiReport" class="hiddenClass">
+    <div class="textHead">Base Script</div><div class="reportShow" id="roiIndex"></div>
+    <div class="textHead">OI Gainer</div><div class="reportShow" id="roiTop"></div>
+    <div class="textHead">OI Loser</div><div class="reportShow" id="roiBottom"></div>
+  </div>
+
+
+</div>
+
+
+  </body>
+  <script src="./index.js" charset="utf-8"></script>
+</html>
