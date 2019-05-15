@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MakretSnap M Page</title>
+    <link rel="stylesheet" href="./pp.css">
+    <script src="./helpchart.js"></script>
+    <script src="./highcharts.js"></script>
+
+  </head>
+  <body>
+    <div class="card">
+      <div class="heading">Market SnapShot</div>
+      <div class="options">
+        <div id="selectOption" class="optionClass">
+          <button id="oiBtn" class="scriptsBtn button" type="button" onclick="getData()">Get Market Data</button>
+        </div>
+        <div class="progress" style="display:none;"> <div class="bar" id="progressBar">50%</div></div>
+      </div>
+      <div id="oiReport"></div>
+    </div>
+  </body>
+  <script src="./pp.js" charset="utf-8"></script>
+</html>
