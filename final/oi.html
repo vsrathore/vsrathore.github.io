@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>OI M Page</title>
+    <link rel="stylesheet" href="./css/oi.css">
+  </head>
+  <body>
+
+
+<div class="card">
+
+  <div class="heading">
+    <a class="cardRef" href="./homepage.html"><div style="position: absolute; width: 18%;">&#8656;</div></a>
+    <div style="text-align: left;margin-left: 19%;"> Market SnapShot </div>
+  </div>
+
+  <div class="options">
+
+    <div id="selectOption" class="optionClass">
+      <select id="doption" class="scriptsBtn"></select>
+      <select id="moption" class="scriptsBtn"></select>
+      <select id="yoption" class="scriptsBtn"></select>
+      <button id="oiBtn" class="scriptsBtn button" type="button" onclick="oiBtnClick()">Get OI Data</button>
+    </div>
+    <div id="mainOption" class="optionClass hiddenClass">
+      <select id="scripts" class="scriptsBtn mainSelect" onchange="changeFunction()"></select>
+      <select id="subscripts" class="scriptsBtn"></select>
+      <button id="scriptsBtn" class="scriptsBtn button" type="button" onclick="scriptsBtnClick()">Get OI</button>
+    </div>
+    <div class="notification" id="notification"></div>
+
+  </div>
+
+
+  <div id="oiReport" class="hiddenClass">
+    <div class="textHead">Base Script</div><div class="reportShow" id="roiIndex"></div>
+    <div class="textHead">OI Gainer</div><div class="reportShow" id="roiTop"></div>
+    <div class="textHead">OI Loser</div><div class="reportShow" id="roiBottom"></div>
+  </div>
+
+
+</div>
+
+
+  </body>
+  <script src="./js/oi.js" charset="utf-8"></script>
+</html>

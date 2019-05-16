@@ -1,0 +1,129 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    color: #666;
+    background: #F6F6F6;
+}
+
+body{
+  margin: 0px;
+}
+
+.card{
+    min-width: 90vw;
+    min-height: 83vh;
+    margin: 4%;
+    background: #F6F6F6;
+    border-radius: 20px;
+    box-shadow:2px 2px 10px 10px #cecece;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .5);
+}
+
+.heading{
+  border-radius: 20px 20px 0px 0px;
+  font-size: 85px;
+  text-align: center;
+  background: #46a2e8;
+  color: white;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+.scriptsBtn{
+  font-size: 33px;
+  /* padding: 3px 0px 3px 0px; */
+  border: 1px solid #ddd;
+  /* margin-bottom: 12px; */
+  /* text-align: center; */
+  width: 200px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.optionClass{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+
+
+.textHead{
+  box-shadow: 0px 0px 20px 0px #b9b7b7;
+  border-radius: 20px 20px 0px 0px;
+  font-size: 50px;
+  height: 80px;
+  color: #101f27;
+  /* background: black; */
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.reportShow{
+  border-radius: 20px;
+  box-shadow: 0px 12px 20px 0px #b9b7b7;
+}
+
+.button{
+  width: 350px;
+  margin: 20px;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  /* font-weight: bolder; */
+}
+
+.hiddenClass{
+  display: none;
+}
+
+.progress {
+  width: 96%;
+  height: 27px;
+  background-color: #c5c5c5;
+  border-radius: 16px;
+  padding: 1px;
+  margin-left: 2%;
+}
+
+.bar {
+  text-align: center;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  width: 50%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+
+.refreshBtn{
+  /* float: right;
+  font-size: 50px;
+  padding-right: 10%; */
+}
+.refreshText{
+  /* padding-left: 15%; */
+}
+
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 5px;
+}
+
+td, th {
+  border: 1px solid white;
+  /* text-align: left; */
+  padding: 8px;
+  font-size: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:first-child{
+  background-image: linear-gradient(120deg, #8fd3f4 0%, #84fab0 100%);
+}
