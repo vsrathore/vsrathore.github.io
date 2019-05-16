@@ -46,7 +46,8 @@ function getData() {
 
 function updateProgressBar(){
   let progressBarId = document.getElementById("progressBar")
-  let pText =  ((globalIndex)*100/arr.length)+"%"
+  let pText =  ((globalIndex)*100/arr.length)
+  pText = ptext>100?"100%":pText+"%"
   progressBarId.innerText = pText
   progressBarId.style.width = pText
   globalIndex++
