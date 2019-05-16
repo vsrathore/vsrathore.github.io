@@ -41,7 +41,7 @@ body{
 
 .reportShow{
   padding: 10px;
-  min-height: 200px;
+  min-height: 350px;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -58,13 +58,12 @@ body{
 
 .subCard{
   box-shadow: 0px 0px 20px 0px #b9b7b7;
-  margin: 3% 2% 3% 2%;
-  width: 44%;
   border-radius: 20px;
 }
 
 .cardRef{
-  display: contents;
+  width: 44%;
+  margin: 3% 2% 3% 2%;
   color: inherit;
   cursor: inherit;
   text-decoration: inherit;
