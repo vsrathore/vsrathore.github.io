@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="./optionCalculator.js" charset="utf-8"></script>
+    <title>Fetch Data</title>
+
+<link rel="stylesheet" href="./fetch.css">
+
+  </head>
+  <body>
+
+    <div class="headerText">
+
+      <span>Option Payoff Matrix Calculator</span>
+      <label class="switch">
+        <input type="checkbox" onchange="onlineOffline(this.nextElementSibling.innerText)">
+        <div class="slider round" id="togBtn">
+          <span class="on noselect">Online</span>
+          <span class="off noselect">Offline</span>
+        </div>
+      </label>
+
+    </div>
+
+<div id="first" name="online" class="invisibalCloak">
+  <br>
+  <select id="scriptList"> </select>
+  <button onclick="scriptChng()">Get Live Prices</button>
+  <select id="expiryList" oninput="updateExpiry(this)"></select>
+
+</div>
+<br>
+<div name="offline" id='dayprice'>
+  <label>Underlying Price</label>
+  <input type="number" name="price"  placeholder="Price " id="MarketPrice" value="11900">
+  <input type="number" name="days"  placeholder="Days to Expiry " id="ExpiryDays" value="3">
+</div>
+<br>
+<div id="firstSecond">
+
+</div>
+<br>
+
+<div id="second">
+  <div id="secondFirst"></div>
+  <div id="secondSecond" name="offline" >
+    <button onclick="addTrade()">Add Trade</button>
+    <button onclick="CalcTrade()">CalcTrade</button>
+  </div>
+</div>
+
+
+
+    <br>
+    <div name="chartParams" id="chartParams" class="invisibalCloak">
+      <input type="number" id="startRange" placeholder="startRange" oninput="myFunction(this)" value="1000">
+      <input type="number" id="stepRange" placeholder="stepRange" oninput="myFunction(this)" value="100">
+      <input type="number" id="maxPoint" placeholder="Number of points on chart" oninput="myFunction(this)" value="20">
+    </div>
+
+
+    <div id="showdata"> </div>
+    <div id="container" style="width: 90vw; height: 400px; margin: 0 auto"></div>
+    <div id="matrixTable"></div>
+    <div id="greekTable"></div>
+
+
+  </body>
+  <script src="./highcharts.js"></script>
+  <script src="./chartDemo.js" charset="utf-8"></script>
+  <script src="./fetch.js" charset="utf-8"></script>
+</html>
