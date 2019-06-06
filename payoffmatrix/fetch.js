@@ -9,6 +9,8 @@ globalData.status = 'offline'
 
 let divId = document.getElementById('showdata')
 
+function refreshPage(){ location.reload(); }
+
 function getchData(a) {
   setLoader()
   var url = "https://script.google.com/macros/s/AKfycbyvU0KQAELcoKsuKd5H5BmawH_BjxLqfr-OKMPTyEu2ccsimNpE/exec"
