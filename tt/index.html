@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./index.css">
+  <title>Live Train Tracker</title>
+</head>
+<body>
+
+  <div id="alldiv">
+
+    <div class="header">
+      <h1>Train Tracker</h1>
+    </div>
+
+    <div id="inputs" style="display:none;">
+      <input class="myinput" id="cls" type="text" value="SL" placeholder="Class"/>
+      <input class="myinput" id="dDate" type="text" value="20190607" placeholder="Travel Date"/>
+      <input class="myinput" id="quota" type="text" value="GN" placeholder="Quota"/>
+      <input class="myinput" id="source" type="text" value="DLI" placeholder="Source"/>
+      <input class="myinput" id="dest" type="text" value="GADJ" placeholder="Destination"/>
+      <input class="myinput" id="tNumber" type="text" value="14659" placeholder="Train Number"/>
+      <input class="myinput" id="timer" type="text" value="30000" placeholder="Loop Timer"/>
+    </div>
+
+    <div id="inputsParam" style="text-align:center;"><h4>this is info panel of input param</h4></div>
+    <br>
+    <div style="display:flex;">
+      <div class="baseShowInputs" onclick="fetchData()"> <label id="fetchData">Fetch Data</label> </div>
+      <div class="baseShowInputs" onclick="showInputs()"> <label id="showInputs">Show Input</label> </div>
+    </div>
+
+    <div class="infoCenter" style=" margin: 1%;">
+      <div id="currentStatus" style=" font-size: 25px; margin: 5%; ">currentStatus</div>
+      <div id="loader" style=" margin: 5%; ">loader</div>
+      <div id="allStatus" style=" margin: 5%; font-size: 15px; ">allStatus</div>
+    </div>
+
+  </div>
+</body>
+<script src="./index.js" charset="utf-8"></script>
+</html>
