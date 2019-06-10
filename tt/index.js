@@ -47,7 +47,7 @@ function fetchSuccessX(y){
       p.innerHTML = new Date().toJSON().split("T").join(" ").replace("Z","")+" --- "+sts
       document.getElementById("allStatus").prepend(p)
 
-      if(sts.includes("NOT")){
+      if(sts.includes("AVBL")){
         waitTime = 3000;
         audio1.play()
         // playAudio = setTimeout(function(){ audio1.load() }, 3000)
@@ -81,7 +81,6 @@ function showInputs() {
 
 var timer
 var loopX = false;
-// var audio1 = new Audio("http://curtastic.com/nightmare.mp3")
 var audio1 = new Audio('https://raw.githubusercontent.com/vsrathore/vsrathore.github.io/master/in/beep-07.mp3')
 
 // audio1.loop = true
