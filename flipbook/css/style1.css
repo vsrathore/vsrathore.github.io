@@ -786,7 +786,7 @@ button:focus {
   top: 0;
   right: 0;
   font-size: 18px;
-  color: #ddd;
+  color: #4CAF50;
   cursor: pointer;
   pointer-events: none;
   padding: 20px 30px;
