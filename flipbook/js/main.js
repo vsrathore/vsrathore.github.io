@@ -124,7 +124,7 @@ function addHeading(books) {
 	 <span class="category">`+bookDetail.detail+`</span>
 	 <div class="meta meta--preview">
 	 <div class="meta__avatar">By `+bookDetail.author+`</div>
-	 <span class="meta__date"><i class="fa fa-calendar-o"></i>`+book.date+`</span>
+	 <span class="meta__date"><i class="fa fa-calendar-o"></i>`+bookDetail.date+`</span>
 	 <span class="meta__reading-time"><i class="fa fa-clock-o"></i>`+bookDetail.time+`</span>
 	 </div>
 	 </a>
