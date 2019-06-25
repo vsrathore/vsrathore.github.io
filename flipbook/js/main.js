@@ -1,13 +1,12 @@
 /**
  * main.js
- * http://www.codrops.com
- *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2015, Codrops
- * http://www.codrops.com
  */
+
+function getDateFormatted(timestamp){
+  return new Date(timestamp).toLocaleDateString("default", {year: 'numeric', month: 'short', day: 'numeric' })
+}
 
 
 var bookStatus = 'closed';
@@ -53,6 +52,8 @@ window.addEventListener('scroll', function() {
  let bookSummary = {};
  let initial = true;
  let lastTimeStamp;
+
+
  getFireData()
  function getFireData() {
    books = [];
@@ -72,7 +73,7 @@ fireBooks.get().then(querySnapshot => {
     console.log(lastTimeStamp);
     querySnapshot.forEach((doc) => {
       var dData = doc.data()
-      books.push({id:doc.id, title:dData.title, author:dData.author,snap:dData.snap,time:dData.time, detail:dData.detail, summary:dData.summary})
+      books.push({id:doc.id, title:dData.title, author:dData.author,snap:dData.snap,time:dData.time, detail:dData.detail, summary:dData.summary, date:getDateFormatted(dData.timestamp)})
     });
     addHeading(books)
   }else{
@@ -98,7 +99,7 @@ function addArticle(item) {
 	 <div class="meta meta--full">
 		 <img class="meta__avatar" src="http://tinygraphs.com/labs/isogrids/hexa/`+book.author+`?theme=summerwarmth&numcolors=4&size=120&fmt=svg" />
 		 <span class="meta__author">`+book.author+`</span>
-		 <span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
+		 <span class="meta__date"><i class="fa fa-calendar-o"></i>`+book.date+`</span>
 		 <span class="meta__reading-time"><i class="fa fa-clock-o"></i>`+book.time+`</span>
 	 </div>
 	 <p>`+book.detail+`</p>
@@ -123,7 +124,7 @@ function addHeading(books) {
 	 <span class="category">`+bookDetail.detail+`</span>
 	 <div class="meta meta--preview">
 	 <div class="meta__avatar">By `+bookDetail.author+`</div>
-	 <span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
+	 <span class="meta__date"><i class="fa fa-calendar-o"></i>`+book.date+`</span>
 	 <span class="meta__reading-time"><i class="fa fa-clock-o"></i>`+bookDetail.time+`</span>
 	 </div>
 	 </a>
