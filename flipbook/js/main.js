@@ -150,6 +150,7 @@ function openMenu() {
 
 
 function readBook(item) {
+  gtag('event','read',{ 'event_category': 'book', 'event_label': item.children[0].innerText})
   bookStatus = 'open';
   classie.add(item, 'grid__item--loading');
   setTimeout(function() {
