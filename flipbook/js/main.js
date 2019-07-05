@@ -4,9 +4,31 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
+/**
+GoogleAnalytics Function
+*/
+let googleTag = {
+  readStatus : function(){
+    var bookName = document.getElementsByClassName("title--full")[0].innerText
+    var a = document.getElementsByClassName("scroll-wrap")[0]
+    var readPercentage = Math.floor(a.scrollTop/(a.scrollHeight-window.innerHeight)*100)
+    gtag('event','readStatus',{ 'event_category': 'book', 'event_label': bookName, 'value':readPercentage})
+  },
+
+  openStatus : function(){
+    var bookName = document.getElementsByClassName("title--full")[0].innerText
+    gtag('event','open',{ 'event_category': 'book', 'event_label': bookName})
+  }
+
+};
+
+
+
+
 function getDateFormatted(timestamp){
   return new Date(timestamp).toLocaleDateString("default", {year: 'numeric', month: 'short', day: 'numeric' })
 }
+
 
 
 var bookStatus = 'closed';
@@ -150,7 +172,7 @@ function openMenu() {
 
 
 function readBook(item) {
-  gtag('event','read',{ 'event_category': 'book', 'event_label': item.children[0].innerText})
+  googleTag.openStatus();
   bookStatus = 'open';
   classie.add(item, 'grid__item--loading');
   setTimeout(function() {
@@ -200,7 +222,7 @@ function loadContent(item) {
 
 function closeBook(){
   if (bookStatus==='open') {
-    console.log("closing");
+    googleTag.readStatus();
     hideContent();
   }
 };
