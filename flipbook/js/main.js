@@ -15,8 +15,8 @@ let googleTag = {
     gtag('event','readStatus',{ 'event_category': 'book', 'event_label': bookName, 'value':readPercentage})
   },
 
-  openStatus : function(){
-    var bookName = document.getElementsByClassName("title--full")[0].innerText
+  openStatus : function(item){
+    var bookName = item.children[0].innerText
     gtag('event','open',{ 'event_category': 'book', 'event_label': bookName})
   }
 
@@ -172,7 +172,7 @@ function openMenu() {
 
 
 function readBook(item) {
-  googleTag.openStatus();
+  googleTag.openStatus(item);
   bookStatus = 'open';
   classie.add(item, 'grid__item--loading');
   setTimeout(function() {
