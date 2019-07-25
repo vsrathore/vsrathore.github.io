@@ -980,7 +980,8 @@ button:focus {
     top: 0;
     right: 0;
     background: #fff;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #84d628c7 var(--readStatus, 0%), #f5f5f5 var(--readStatus, 0%)) 5;
     width: 100vw;
     height: 50px;
     pointer-events: none;
