@@ -22,7 +22,11 @@ let googleTag = {
 
 };
 
-
+function setReadStatus(){
+  var a = document.getElementsByClassName("scroll-wrap")[0]
+  var readPercentage = (a.scrollTop/(a.scrollHeight-window.innerHeight)*100).toFixed(2)
+  document.getElementById("articleClose").style.setProperty("--readStatus",readPercentage+"%")
+}
 
 
 function getDateFormatted(timestamp){
@@ -184,6 +188,7 @@ function readBook(item) {
 
 function loadContent(item) {
   addArticle(item)
+  document.getElementById("articleClose").style.setProperty("--readStatus","0%")
 
   var gic = document.getElementById('gridItemsContainer')
   var cic = document.getElementById('contentItemsContainer')
