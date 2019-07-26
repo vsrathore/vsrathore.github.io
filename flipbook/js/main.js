@@ -18,7 +18,17 @@ let googleTag = {
   openStatus : function(item){
     var bookName = item.children[0].innerText
     gtag('event','open',{ 'event_category': 'book', 'event_label': bookName})
-  }
+  },
+	
+  userId : function () {
+   let uid = new ClientJS();
+   Fingerprint2.get(function (a) {
+      let x = uid.getFingerprint();
+      let y = Fingerprint2.x64hash128(a.map(function (p) { return p.value }).join(), 31);
+      gtag('event','userId',{ 'event_category': 'user', 'event_label': x+"_"+y})
+    })
+  },
+
 
 };
 
@@ -87,6 +97,7 @@ window.addEventListener('scroll', function() {
 
    let fireBooks;
   if(initial){
+    googleTag.userId();
     fireBooks = db.collection("/books").orderBy("timestamp","desc").limit(5)
     initial = false;
   }else{
