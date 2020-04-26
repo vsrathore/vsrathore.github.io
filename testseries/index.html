@@ -1,0 +1,60 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>FireStore</title>
+
+    </head>
+
+<link rel="stylesheet" href="./index.css">
+
+<body>
+
+  <div id="viewTemplate"></div>
+
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closePopUp()">&times;</span>
+      <div id="modalBody"class="modal-body">
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+  </div>
+
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/firebase-firestore.js"></script>
+    <script src="./jscript/html2pdf.js"></script>
+    <script src="./jscript/index.js"></script>
+<script type="text/javascript">
+
+
+
+quesJson = {'30014201':{'options':{'a':' Strophanthus','b':' Indian squill','c':' Garlic','d':' None of the above'},'correct':'b','ques':'Jangli Piyaz is a synonym for:'},'16975892':{'options':{'a':' Glycone part of Digitali glycoside','b':' Aglycone part of digitali glycoside','c':' Both the part ','d':' Glucose'},'correct':'a','ques':'Keller-Killiani test is specific test for:'},'30739973':{'options':{'a':' Decomposition','b':' Chemical degradation','c':' Enzymatic hydrolysis','d':' Volatalisation'},'correct':'b','ques':'If the digitalis leaves are dried above 60° C, potiency is lost due to:'},'4979954':{'options':{'a':' Digitalis','b':' Senna','c':' Hyoscyamus','d':' Belladonna'},'correct':'a','ques':'Foxglove leave is a synonym for:'},'5991225':{'options':{'a':' Aloe','b':' Rhubarb','c':' Cascara','d':' Cinnamon'},'correct':'b','ques':'Revandchini is common name of:'},'14712846':{'options':{'a':' Liliaceae','b':' Rubiaceae','c':' Apocyanace','d':' Rutaceae'},'correct':'a','ques':'Aloe belongs to family:'},'26175297':{'options':{'a':' Baljet test','b':' Molisch test','c':' Brontrager test','d':' None of the above'},'correct':'c','ques':'Anthraquinone glycosides are detected by:'},'16485218':{'options':{'a':' Indian Senna','b':' Alexandrian Senna','c':' Arabian Senna','d':' All of the above'},'correct':'a','ques':'Tinnevelley Senna is a:'},'21536649':{'options':{'a':' Bael','b':' Agar','c':' Karaya gum','d':' Acacia gum'},'correct':'a','ques':'The marmelosin is a constituent of:'},'304224510':{'options':{'a':' Acacia Arabica','b':' Gelidium amansii','c':' Astragalus gummlfer','d':' Sterculia urens'},'correct':'a','ques':'The source of Indian acacia is'},'195961011':{'options':{'a':' Schedule N','b':' Schedule M','c':' Schedule O','d':' Schedule X'},'correct':'b','ques':'The premises licenced for manufacture of drug must fulfil the condition according to :'},'200778412':{'options':{'a':'19','b':'18','c':'20','d':'21'},'correct':'d','ques':'Licence for the retail sale of schedule C and C1 drugs is given in the form:'},'173557113':{'options':{'a':' Imitations','b':' Substitutes','c':' Resembled drugs','d':' All of the above'},'correct':'d','ques':'Spurious drugs means :'},'16443414':{'options':{'a':' G','b':' J','c':' C','d':' H'},'correct':'b','ques':'List of ailments that is not cured by drug is given in Schedule :'},'181285315':{'options':{'a':' Tetracycline','b':' Glibenclamide','c':' Ibuprofen','d':' Paracetamol'},'correct':'b','ques':'Example of Schedule G drug is :'},'327170316':{'options':{'a':' Central drug research institute','b':' Indian Veterinary research institute','c':' Indian Pharmacopocial laboratory','d':' Central drug laboratory'},'correct':'c','ques':'Condoms are tested at :'},'144235917':{'options':{'a':' Mumbai','b':' Kolkata','c':' Chennai','d':' Kasauli'},'correct':'d','ques':'Biologicals are tested at :'},'179419418':{'options':{'a':' Raw conditions','b':' Multidose vials','c':' Bulk form','d':' Unit Containers'},'correct':'d','ques':'Patent and proprietary medicines can be imported to some extent in :'},'295003819':{'options':{'a':' E','b':' F and F1','c':' E1','d':' G'},'correct':'c','ques':'List of aryuvedic poison is related to schedule :'},'154912220':{'options':{'a':'1954','b':'1944','c':'1920','d':'1935'},'correct':'a','ques':'The magic remedies act was passed in the year :'},'297962521':{'options':{'a':' Ergot','b':' Opium','c':' Cinchona','d':' Belladonna'},'correct':'a','ques':'St. Antony’s fire is related to:'},'171159422':{'options':{'a':' Opium','b':' Cocca leaves','c':' Cannabis','d':' Ergot'},'correct':'d','ques':'Lysergic acid derivatives are present in:'},'77467423':{'options':{'a':' Rauwolfia','b':' Arjuna','c':' Nux-vomica','d':' Physostigma'},'correct':'a','ques':'Sarpagandha is related to:'},'229864224':{'options':{'a':' Vinca rosea','b':' Rauwolfia Serpentina','c':' Withania Somnifera','d':' Adhatoda vasica'},'correct':'a','ques':'Peri winkle is related to:'},'164324325':{'options':{'a':' Belladonna','b':' Hyoscyamus niger','c':' Datura stramonium','d':' None of the above'},'correct':'a','ques':'Deadly night shade plant is related to :'},'209937726':{'options':{'a':' Apocynaceae','b':' Solanaceae','c':' Lauraceae','d':' Rutaceae'},'correct':'b','ques':'Atropa belladonna or Atropa acuminate belongs to family:'},'301085127':{'options':{'a':' One registered medical practioner','b':' Two registered medical practioner','c':' Nurse','d':' None of the above'},'correct':'b','ques':'A 12 weeks pregnancy can be terminated with consent of :'},'179850628':{'options':{'a':' Doctor holding M.B.B.S. degree','b':' Doctor holding M.D. degree','c':' Gynaecologist','d':' Two registered medical practioner'},'correct':'d','ques':'A 20 weeks pregnancy can be terminated with the consent of :'},'285929629':{'options':{'a':' Spurious','b':' Misbranded','c':' Adulterated','d':' Any of the above'},'correct':'b','ques':'If a drug contain a colour which is not prescribed, is called :'},'278347530':{'options':{'a':' Central government','b':' State government','c':' Cabinat Health Minister','d':' Legislative Assembly'},'correct':'a','ques':'The pharmacy council of India is constituted by the :'},'154844231':{'options':{'a':' 20 A','b':' 22 B','c':' 21 B','d':' 22 A'},'correct':'c','ques':'License for wholesale of drugs specified in schedule C and C1 is issued in form :'},'331173832':{'options':{'a':' Lime coated ginger','b':' Exhausted ginger','c':' Lime mixed ginger powder','d':' None of the above'},'correct':'a','ques':'Limed ginger is a :'},'256202433':{'options':{'a':' Capsaicin','b':' Caspsanthin','c':' Carotene','d':' Pungent protein'},'correct':'a','ques':'Pungency of chillies is due to presence of:'},'41546334':{'options':{'a':' Acid resin','b':' Oleo-gum resin','c':' Balsam','d':' Glyco resin'},'correct':'b','ques':'Asafoetida is a :'},'55571535':{'options':{'a':' Fungal microorganism, saccharmyces cerevisiae','b':' Algae, codium fragile','c':' Microorganism, Escherichia coli','d':' None of the above'},'correct':'a','ques':'YEAST consists of unicellular :'},'150982936':{'options':{'a':' Malvaceae','b':' Rubiaceae','c':' Leguminaceae','d':' Meliaceae'},'correct':'a','ques':'Cotton belongs to family:'},'98321837':{'options':{'a':' 3 Hours','b':' 4 Hours','c':' 2 Years','d':' 5 Years'},'correct':'d','ques':'The pharmacy council of India is constituted every :'},'48932138':{'options':{'a':' State Pharmacy council','b':' Pharmacy Council of India','c':' Medical Council of India','d':' None of the above'},'correct':'b','ques':'The institution running pharmacy course is approved by :'},'256432539':{'options':{'a':' State Pharmacy Council','b':' Joint Pharmacy Council','c':' Central Council of Pharmacy','d':' None of the above'},'correct':'c','ques':'The Pharmacy Council of India is also known as :'},'238686540':{'options':{'a':' Registrar','b':' Treasurer','c':' Both (a and b)','d':' None of the above'},'correct':'c','ques':'The secretary of PCI also act as :'},'168323541':{'options':{'a':' D.C.C.','b':' D.E.C.','c':' D.C.I.','d':' P.C.I.'},'correct':'a','ques':'The advisory committee for D.T.A.B. and various governments is :'},'108595142':{'options':{'a':' Glycyrrhiza glabra','b':' Gentiana lutea','c':' Picrorrhiza kurrora','d':' None of the above'},'correct':'a','ques':'Mulethi is common name for:'},'293973743':{'options':{'a':' Centella asiatica','b':' Gentiana lutea','c':' Quillaia bark','d':'̒ None of the above'},'correct':'b','ques':'Bitter glycoside are present in:'},'152702244':{'options':{'a':' Tanins','b':' Alkaloids','c':' Proteins','d':' Amino acid'},'correct':'b','ques':'Dragendorff’s reagent is used to indicate the presence of:'},'190586445':{'options':{'a':' Nicotine','b':' Berberine','c':' Narcotine','d':' Thebaine'},'correct':'a','ques':'Which one of these alkaloids is liquid?'},'224159946':{'options':{'a':' Ghazipur','b':' Izatnagar','c':' Lucknow','d':' Kolkata'},'correct':'a','ques':'Government opium factory is situated at :'},'264781547':{'options':{'a':' Prepared opium','b':' Medicinal opium','c':' Morphine and its salt','d':' Poppy capsule'},'correct':'b','ques':'The opium which has been manipulated according to pharmacopoeial standards is :'},'202079848':{'options':{'a':'1948','b':'1919','c':'1940','d':'1930'},'correct':'d','ques':'Dangerous drug act and rules relates to :'},'165058149':{'options':{'a':' Custom collector','b':' Excise commissioner','c':' Central government','d':' None of the above'},'correct':'b','ques':'Licence for the manufacture of medicinal and toilet preparation in bond are issued by :'},'146983950':{'options':{'a':' Crocus sativum','b':' Pisum sativum','c':' Colchicum autumnale','d':' Saffron crocus'},'correct':'a','ques':'The botanical name of ‘saffron’ is :'}}
+
+
+
+
+
+oldExamJson = {
+  'latest':{ 'name':'LatestPaper', 'dateTime': '-Internet Error' },
+}
+
+// oldExamJson = {
+//   '20200425044327442':{ 'name':'Latest-oldQues1', 'dateTime': '25th Jan 2020' },
+//   '20200425044324181':{ 'name':'oldQues2', 'dateTime': '7th Feb 2020' },
+//   '20200425044046481':{ 'name':'oldQues3', 'dateTime': '13th Mar 2020' },
+//   '20200425043554332':{ 'name':'oldQues4', 'dateTime': '19th Apr 2020' },
+// }
+
+
+
+
+</script>
+
+</body>
+
+</html>
