@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 
-let globalData = {papers:{}}
+let globalData = {'papers':{}}
 let localData = {}
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -240,6 +240,8 @@ function getExamPaperById(examId,headerText) {
     else if (globalData.papers[examId]) {
       elm2.innerHTML = latestExamPaperHTML(globalData.papers[examId])
       console.log("Fetched data from cache.");
+      loading('hide');
+
     }else{
       let docRef = db.collection("exampapers").doc(examId);
       docRef.get().then(function(doc) {
@@ -323,6 +325,7 @@ function getOldExamPaper(elm2){
   if (globalData.oldExamJson) {
     elm2.innerHTML = oldExamPaperHTML(globalData.oldExamJson)
     console.log("Fetched data from cache.");
+    loading('hide')
   }else{
     let docRef = db.collection("exampapers").doc("oldExamList");
     docRef.get().then(function(doc) {
