@@ -325,7 +325,7 @@ function latestExamPaperHTML(quesJson) {
   // console.log(quesJson);
   kk = ''
   index = 1
-  let tbl = '<table><tr>'
+  let tbl = '<div style="padding: 2rem 0rem;">'
   for (each of Object.keys(quesJson)){
       ll = `
           <div class="question" id="question_`+each+`">
@@ -338,11 +338,11 @@ function latestExamPaperHTML(quesJson) {
             </div>
           </div>
       `
-      tbl = tbl+'<td id="cell_'+each+'">'+index+'</td>'
+      tbl = tbl+'<span class="cells" id="cell_'+each+'">'+index+'</span>'
       index += 1
       kk = kk+ll
   }
-  tbl = tbl+'</tr></table>'
+  tbl = tbl+'</div>'
 
   let tempHtml = `
     <div id="livetestpaper" style="text-align: initial;">
@@ -350,15 +350,13 @@ function latestExamPaperHTML(quesJson) {
     </div>
     <div class="buttons previousNextButton">
       <button onclick="btnClick('mobile','previous')" style="
-    font-size: 2rem;
-    background-image: linear-gradient(19deg, #fb584d 0%, #E91E63 100%);
-">Previous</button>
+          font-size: 2rem;
+          background-image: linear-gradient(19deg, #fb584d 0%, #E91E63 100%);
+      ">Previous</button>
       <button onclick="btnClick('mobile','next')" style="
-    padding: 7px 36px;
-    font-size: 2rem;
-    background-image: linear-gradient(19deg, #9da92c 0%, #69b313 100%);
-    margin-left: 1rem;
-">Next</button>
+        padding: 7px 36px; font-size: 2rem; background-image: linear-gradient(19deg, #9da92c 0%, #69b313 100%); margin-left: 1rem; "
+      >Next</button>
+
     </div>
 
     <div id="latestExamPaperButtons" class="latestExamPaperButtons hideButtonsMobile">
@@ -451,7 +449,7 @@ function setFirstQuestionVisible() {
 }
 
 function setQuesTableView() {
-  $('td').click(function(event){
+  $('span').click(function(event){
     $('.question-visible').removeClass('question-visible')
     let tempelm = $('#question_'+this.id.split('_')[1])
     tempelm.addClass('question-visible');

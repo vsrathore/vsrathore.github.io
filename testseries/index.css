@@ -406,28 +406,17 @@ label{
   border-radius: 12px;
 }
 
-table{
-	display: block;
-  /* background: bisque;
-  border-radius: 20px;
-  padding: 20px; */
-}
 
-tbody{
-	text-align: center;
-  display: block;
-  padding: 10px;
-}
-tr{
-	display: block;
-}
-td{
+
+
+.cells{
 	margin: 5px;
-  display: inline-table;
+  display: inline-block;
   background: #9e9e9e63;
   padding: 12px 20px;
   border-radius: 10px;
   font-size: 1.3rem;
+  vertical-align: top;
 }
 
 .quesTableCell_attempted{
