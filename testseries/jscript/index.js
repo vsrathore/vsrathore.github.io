@@ -126,6 +126,42 @@ function optionText(op){
 // HomePage Page button functions : End
 
 
+// Mobile Page button functions : Start
+  localData.mobile = {}
+
+  localData.mobile.next = function() {
+    let visibleQuestion = $('#livetestpaper .question-visible')[0]
+    if(visibleQuestion.nextElementSibling){
+      visibleQuestion.nextElementSibling.classList.add('question-visible')
+      visibleQuestion.classList.remove('question-visible')
+    }else{
+      // use reached to end of ques list, so show popup for review & submit
+      submitPaperOnMobile()
+    }
+  }
+
+  localData.mobile.previous = function() {
+    let visibleQuestion = $('#livetestpaper .question-visible')[0]
+    if(visibleQuestion.previousElementSibling){
+      visibleQuestion.previousElementSibling.classList.add('question-visible')
+      visibleQuestion.classList.remove('question-visible')
+    }else{
+      // use reached to end of ques list, so show popup for review & submit
+      submitPaperOnMobile()
+    }
+  }
+
+function submitPaperOnMobile() {
+  let childCount = document.getElementById('examPageOutputHead').childElementCount
+  if (childCount==0) { localData.latestExamPaper.review() }
+}
+// Mobile Page button functions : End
+
+
+
+
+
+
 
 // latestExamPaper button functions : Start
   localData.latestExamPaper = {}
@@ -175,13 +211,17 @@ function optionText(op){
           score.incorrect += 1
           questionElm.children[1].children[attempetedAnswerIndex].classList.add('wrong')
           addIcon(questionElm, 'incorrect')
+          quesTableCell(each, 'incorrect')
         }else{
           score.correct += 1
           addIcon(questionElm, 'correct')
+          quesTableCell(each, 'correct')
+
         }
       }else{
         score.skipped += 1
         addIcon(questionElm, 'skipped')
+        quesTableCell(each, 'skipped')
       };
 
 
@@ -204,6 +244,9 @@ function optionText(op){
     scrollTo(0,0)
 // Hide exam paper's buttons; so student can't retry to submit current paper.
     $("#latestExamPaperButtons")[0].style.display = 'None'
+    $('.label').removeClass('labelHover');
+    globalData.paperSubmitted = true
+    $('.quesTableSubmit').hide()
 
   }
 
@@ -236,11 +279,13 @@ function getExamPaperById(examId,headerText) {
       document.getElementById("homePageButtons").style.display = 'None'
       document.getElementById("resetExamButton").style.display = 'None'
       loading('hide')
+      setHighlight();
     }
     else if (globalData.papers[examId]) {
       elm2.innerHTML = latestExamPaperHTML(globalData.papers[examId])
       console.log("Fetched data from cache.");
       loading('hide');
+      setHighlight();
 
     }else{
       let docRef = db.collection("exampapers").doc(examId);
@@ -254,10 +299,14 @@ function getExamPaperById(examId,headerText) {
           console.log("No such document!");
         }
         loading('hide')
+        setHighlight();
+
       }).catch(function(error) {
         elm2.innerHTML = latestExamPaperHTML(quesJson)     //this quesJson is demo paper saved in Index.html
         console.log("Error getting document:", error);
         loading('hide')
+        setHighlight();
+
       });
 
     }
@@ -276,46 +325,57 @@ function latestExamPaperHTML(quesJson) {
   // console.log(quesJson);
   kk = ''
   index = 1
+  let tbl = '<table><tr>'
   for (each of Object.keys(quesJson)){
       ll = `
           <div class="question" id="question_`+each+`">
             <div class="qtext">Question `+index+` : `+quesJson[each]["ques"]+`</div>
             <div name="options">
-              <label> A) `+quesJson[each]["options"]["a"]+` <input type="radio" name="`+each+`" value="a"> </label>
-              <label> B) `+quesJson[each]["options"]["b"]+` <input type="radio" name="`+each+`" value="b"> </label>
-              <label> C) `+quesJson[each]["options"]["c"]+` <input type="radio" name="`+each+`" value="c"> </label>
-              <label> D) `+quesJson[each]["options"]["d"]+` <input type="radio" name="`+each+`" value="d"> </label>
+              <label class="label labelHover"> A) `+quesJson[each]["options"]["a"]+` <input type="radio" name="`+each+`" value="a"> </label>
+              <label class="label labelHover"> B) `+quesJson[each]["options"]["b"]+` <input type="radio" name="`+each+`" value="b"> </label>
+              <label class="label labelHover"> C) `+quesJson[each]["options"]["c"]+` <input type="radio" name="`+each+`" value="c"> </label>
+              <label class="label labelHover"> D) `+quesJson[each]["options"]["d"]+` <input type="radio" name="`+each+`" value="d"> </label>
             </div>
           </div>
       `
+      tbl = tbl+'<td id="cell_'+each+'">'+index+'</td>'
       index += 1
       kk = kk+ll
   }
+  tbl = tbl+'</tr></table>'
 
   let tempHtml = `
     <div id="livetestpaper" style="text-align: initial;">
-      <!--
-      // <div class="question">
-      //   <div>Question 1</div>
-      //   <label> Option1 <input type="radio" name="question1" value="Option1"> </label>
-      //   <label> Option2 <input type="radio" name="question1" value="Option2"> </label>
-      //   <label> Option3 <input type="radio" name="question1" value="Option4"> </label>
-      //   <label> Option4 <input type="radio" name="question1" value="Option3"> </label>
-      // </div>
-       -->
-
       `+kk+`
     </div>
-    <div id="latestExamPaperButtons" class="latestExamPaperButtons">
+    <div class="buttons previousNextButton">
+      <button onclick="btnClick('mobile','previous')" style="
+    font-size: 2rem;
+    background-image: linear-gradient(19deg, #fb584d 0%, #E91E63 100%);
+">Previous</button>
+      <button onclick="btnClick('mobile','next')" style="
+    padding: 7px 36px;
+    font-size: 2rem;
+    background-image: linear-gradient(19deg, #9da92c 0%, #69b313 100%);
+    margin-left: 1rem;
+">Next</button>
+    </div>
+
+    <div id="latestExamPaperButtons" class="latestExamPaperButtons hideButtonsMobile">
       <button id="resetExamButton" onclick="btnClick('dashboard','latestExam')">Reset Exam</button>
       <button onclick="btnClick('latestExamPaper','review')">Review</button>
       <button onclick="btnClick('latestExamPaper','submit')">Submit</button>
     </div>
 
+
+    <div class="quesTable" id="quesTable">
+      `+tbl+`
+      <button onclick="btnClick('latestExamPaper','review')" class="quesTableSubmit">Review & Submit</button>
+    </div>
+
   `
 return tempHtml
 }
-
 
 
 
@@ -367,6 +427,41 @@ function oldExamPaperHTML(oldExamJson) {
 
 
 
+
+
+
+function removeHighlight() { $('input[type=radio]').change(function(){ console.log(this); }); }
+function setHighlight() {
+  $('input[type=radio]').change(function(){
+    if (globalData.paperSubmitted) {
+      $(this).unbind(event);
+    }else{
+      $('input[name='+this.name+']').parent().removeClass('highlight');
+      this.parentElement.classList.add('highlight')
+      $('#cell_'+this.name).addClass('quesTableCell_attempted');
+    }
+  });
+  setFirstQuestionVisible()
+  setQuesTableView()
+  globalData.paperSubmitted = false;
+}
+
+function setFirstQuestionVisible() {
+  document.getElementById("livetestpaper").firstElementChild.classList.add('question-visible')
+}
+
+function setQuesTableView() {
+  $('td').click(function(event){
+    $('.question-visible').removeClass('question-visible')
+    let tempelm = $('#question_'+this.id.split('_')[1])
+    tempelm.addClass('question-visible');
+    tempelm[0].scrollIntoView()
+  });
+}
+
+function quesTableCell(id,status) {
+  $('#cell_'+id).addClass('quesTableCell_'+status);
+}
 
 
 

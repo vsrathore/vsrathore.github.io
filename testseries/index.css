@@ -136,14 +136,15 @@ body {
 
 }
 .examPage .headText{
+	display: contents;
 	margin-right: 5rem;
   margin-top: -7px;
-  /* float: left; */
   color: #3F51B5;
   padding: 7px 16px;
   font-family: 'Raleway', sans-seriff;
   font-size: 30px;
   font-weight: bold;
+	/* float: left; */
 	/* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); */
 }
 
@@ -151,14 +152,14 @@ body {
 .examPageOutput{
 	border-radius: 10px;
   margin: 2%;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
   /* display: flex; */
   /* background-color: white; */
-  align-items: center;
-  justify-content: center;
   /* background-color: #21D4FD; */
   /* background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); */
   /* height: 100vh; */
-  padding: 10px;
 }
 
 .examPageOutputBody{
@@ -196,7 +197,8 @@ body {
 
 
 .pageBackground {
-	display: flex;
+	display: grid;
+  text-align: center;
 	background-color: white;
 	align-items: center;
 	justify-content: center;
@@ -205,10 +207,21 @@ body {
 	height: 100vh;
 }
 
+.dashboardH2{
+	color: #3F51B5;
+	border-radius: 12px;
+	font-size: 2rem;
+	margin-top: -4rem;
+	background: white;
+	padding: 20px;
+}
+
+
 .pageBox {
-  text-align: center;
-  	min-width: 250px;
-  	max-width: 400px;
+	margin-top: -16rem;
+	text-align: center;
+	min-width: 250px;
+	max-width: 400px;
 	border-radius: 24px;
 	padding: 15px;
 	background-color: white;
@@ -220,7 +233,7 @@ body {
 	color: #3F51B5;
 	text-align: center;
 	font-size: 2.5rem;
-	margin-top: 35px;
+	margin: 1rem;
 }
 
 .loginBox input {
@@ -242,14 +255,14 @@ body {
 .loginBox .submit{
   background-color: #E0E0E0;
   background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-  width: 50%;
+  width: 80%;
   color: #fff;
   border: none;
   margin: 10px;
   cursor: pointer;
   padding: 10px;
   font-family: 'Raleway', sans-seriff;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   /* font-weight: bold; */
   border-radius: 24px;
   transition: 0.25s;
@@ -284,9 +297,10 @@ body {
 	margin: 3rem 5rem;
 }
 .answertext{
-	text-align: center;
-	font-size: 2rem;
-	font-weight: 600;
+	color: #3F51B5;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 
@@ -303,9 +317,12 @@ input {
   padding: 15px;
 }
 
+/* .question-visible{ display: block;} */
+
 .missedQuestion{
 	color: #b10000;
-	background: #c1c1c1;
+	background: #ffffff;
+	/* background: #c1c1c1; */
 }
 
 label{
@@ -315,10 +332,19 @@ label{
   display: inline-flex;
 }
 
-label:hover{
+.labelHover:hover{
   background: rgba(45, 216, 200, 0.30);
   /* font-weight: 600; */
 }
+
+.highlight{
+	background: rgba(45, 216, 200, 0.30);
+}
+
+
+
+
+
 
 .wrong{
 	background: #E91E63;
@@ -359,6 +385,65 @@ label:hover{
 
 
 
+.quesTable{
+	border-radius: 10px;
+  background: white;
+  margin-top: 4rem;
+  display: block;
+  box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.23);
+}
+.quesTableSubmit{
+	color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Raleway', sans-seriff;
+  transition: 0.25s;
+  box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.23);
+  padding: 7px 36px;
+  font-size: 2rem;
+  background-image: linear-gradient(19deg, #9da92c 0%, #69b313 100%);
+  margin: 1rem;
+  border-radius: 12px;
+}
+
+table{
+	display: block;
+  /* background: bisque;
+  border-radius: 20px;
+  padding: 20px; */
+}
+
+tbody{
+	text-align: center;
+  display: block;
+  padding: 10px;
+}
+tr{
+	display: block;
+}
+td{
+	margin: 5px;
+  display: inline-block;
+  background: #9e9e9e63;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+.quesTableCell_attempted{
+	background: #4d9ffe;
+}
+.quesTableCell_incorrect{
+	background: #E91E63;
+}
+.quesTableCell_skipped{
+	background: #9e9e9e61;
+}
+.quesTableCell_correct{
+	background: #8BC34A;
+}
+
+
 
 
 
@@ -384,4 +469,39 @@ label:hover{
 @keyframes loading-bar-spinner {
   0%   { transform: rotate(0deg);   transform: rotate(0deg); }
   100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+
+
+.previousNextButton{
+	display:None !important;
+	margin-top: 2rem;
+}
+
+
+.avoid-clicks {
+  pointer-events: none;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+	.pageBox { max-width: 300px;}
+	.loginBox h2 { font-size: 2rem; }
+	.loginBox input { width: 85%; font-size: 1.3rem; padding: 10px;}
+	.modal-content { padding: 4px; width: 20rem; border-radius: 14px; }
+	.qtext { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+	label { display: block; font-size: 1.5rem; }
+	#loading-bar-spinner.spinner { margin-top: 20px; margin-left: 30px; }
+	.examPage .header { text-align: center;}
+	.examPage .headText { display: contents; float: left;}
+	.examPage .buttons { text-align: center; margin-top: 20px; display: block; float: none; }
+	.previousNextButton{display: block!important;}
+	.hideButtonsMobile{display: none!important;}
+
+	.question{display: none;}
+	.question-visible{ display: block!important;}
+	.answerMargin{display: block;}
+	.wrongIcon, .correctIcon, .skippedIcon { width: 36px; margin-top: -3rem; margin-left: 0rem;}
+
+
 }
