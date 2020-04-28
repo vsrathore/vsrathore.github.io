@@ -325,7 +325,7 @@ function latestExamPaperHTML(quesJson) {
   // console.log(quesJson);
   kk = ''
   index = 1
-  let tbl = '<div style="padding: 2rem 0rem;">'
+  let tbl = '<div style="padding-top: 1.5rem;">'
   for (each of Object.keys(quesJson)){
       ll = `
           <div class="question" id="question_`+each+`">
