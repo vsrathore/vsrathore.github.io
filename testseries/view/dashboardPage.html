@@ -1,9 +1,8 @@
-<div class="pageBackground">
-  <h2 class="dashboardH2">Dashboard</h2>
-  <div class="pageBox loginBox">
-    <h2>Test Series :</h2>
-    <button class="submit" onclick="btnClick('dashboard','latestExam')">Latest Exam</button>
-    <button class="submit" onclick="btnClick('dashboard','oldExam')">Old Exams</button>
-    <button class="submit" onclick="btnClick('dashboard','logout')">Logout</button>
-  </div>
+<div class="form-signin  text-center">
+  <img class="mt-4" src="./css/logo.gif" alt="" width="90" height="90">
+  <h1 class="h2 mt-3 mb-4 font-weight-normal">Dashboard</h1>
+  <button class="btn btn-lg btn-primary w-70 mt-3" type="submit" onclick="getExamPaperById('latest')">Latest Exam</button>
+  <button class="btn btn-lg btn-intro w-70 mt-3" type="submit" onclick="oldExamFun()">Old Exams</button>
+  <button class="btn btn-lg btn-danger w-70 mt-3" type="submit" onclick="doLogout()">Logout</button>
+  <p class="mt-5 mb-3 text-muted">ForestRangeOffice.Com <br>&copy; 2020-2021</p>
 </div>

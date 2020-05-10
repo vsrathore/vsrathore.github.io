@@ -1,16 +1,74 @@
-<div class="examPage">
-  <div class="header">
-    <div id="homePageText" class="headText">Student Home Page:</div>
-    <div class="buttons" id="homePageButtons">
-      <button onclick="btnClick('homePage','dashboard')">Dashboard</button>
-      <button onclick="btnClick('dashboard','logout')">Logout</button>
+<div class="row">
+
+  <div class="col-md-8 questionCard mb-4">
+
+    <div id="resultText"></div>
+
+    <div class="quesCard" id="quesCard"></div>
+    <div class="quesBtn mt-1 text-center">
+      <button class="btn btn-lg btn-primary w-20 mt-3" type="submit" onclick="previousQues()">Previous</button>
+      <button class="btn btn-lg btn-primary w-20 mt-3" type="submit" onclick="nextQues()">Next</button>
     </div>
   </div>
 
-  <div class="examPageOutput" id="outputHomePage">
-    <div id="examPageOutputHead" class="examPageOutputHead"></div>
-    <div id="examPageOutputBody" class="examPageOutputBody"></div>
+  <div class="col-md-4 questionPad text-center">
+    <div class="quesTable" id="quesTable"></div>
+    <button onclick="checkQuestionPaper()" id="checkQuesBtn" class="btn btn-lg btn-primary mt-3">Review & Submit</button>
   </div>
-  <div style="height: 2%;">
+
+
   </div>
 </div>
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-md-8 questionCard mb-4">
+    <div class="quesCard" id="quesCard">
+      <div class="quesText">Question 1 : Foxglove leave is a synonym for:Question 1 : Foxglove leave is a synonym for:Question 1 : Foxglove leave is a synonym for:Question 1 : Foxglove leave is a synonym for:</div>
+      <div class="custom-control custom-radio">
+        <input id="optionA" name="paymentMethod" type="radio" class="custom-control-input">
+        <label class="custom-control-label" for="optionA">A)  Digitalis </label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="optionB" name="paymentMethod" type="radio" class="custom-control-input">
+        <label class="custom-control-label" for="optionB">B)  Senna </label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="optionC" name="paymentMethod" type="radio" class="custom-control-input">
+        <label class="custom-control-label" for="optionC">C)  Hyoscyamus </label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="optionD" name="paymentMethod" type="radio" class="custom-control-input">
+        <label class="custom-control-label" for="optionD">D)  Belladonna </label>
+      </div>
+    </div>
+
+    <div class="quesBtn mt-1 text-center">
+      <button class="btn btn-lg btn-primary w-20 mt-3" type="submit" onclick="previousQues()">Previous</button>
+      <button class="btn btn-lg btn-primary w-20 mt-3" type="submit" onclick="nextQues()">Next</button>
+    </div>
+
+
+  </div>
+  <div class="col-md-4 questionPad text-center">
+
+    <div class="quesTable" id="quesTable">
+      <div class="cells" id="cell_">1</div>
+      <div class="cells" id="cell_">2</div>
+      <div class="cells" id="cell_">3</div>
+      <div class="cells" id="cell_">4</div>
+      <div class="cells" id="cell_">5</div>
+      <div class="cells" id="cell_">6</div>
+      <div class="cells" id="cell_">7</div>
+      <div class="cells" id="cell_">8</div>
+    </div>
+    <button onclick="checkQuestionPaper()" class="btn btn-lg btn-primary mt-3">Review & Submit</button>
+
+  </div>
+
+
+  </div>
+</div> -->
