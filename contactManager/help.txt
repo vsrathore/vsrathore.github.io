@@ -1,0 +1,19 @@
+Best utility tool to Manage Contact.
+
+How to use:
+1: Only xls is allowed format.
+2: Each sheet must have two identifier row.
+  i)  On which column we need filter
+  ii) column name we need to show in our filter table.
+
+Eg:
+      | Column1 | | Column2 | | Column3 | | Column4 | | Column5 | | Column6 | | Column7 | | Column8 |
+Row1  |    a    | |         | |    a    | |   a     | |   a     | |         | |    a    | |         |
+Row2  |   name  | | address | |   range | |  rank   | |  dob    | |         | |   phone | |  email  |
+Row3  |   Name1 | | add1    | |    re1  | |   rt    | | Date_B  | |   sads  | | Contact | |   E_ID  |
+
+We need to insert Row1 & Row2 above our main data.
+In above example, we can filter from Column 1,3,4,5,7; and filtered table will show column 1,2,3,4,5,8 
+
+sampleHeader file can be used.
+Copy top two rows and insert them on your working file. And you good to go.

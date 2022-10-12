@@ -1,0 +1,157 @@
+body{
+  margin: 0;
+}
+
+.header{
+  padding: 10px 0px 0px 20px;
+  height: 33px;
+  background: aliceblue;
+}
+.logo{
+  font-size: 25px;
+  float: left;
+}
+
+.upload-btn-wrapper {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn {
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 3px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.upload-btn-wrapper:hover > .btn{
+  color: white;
+  background-color: #4CAF50;
+}
+
+
+
+.filterFiles{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px 0px;
+  /* height: 23px; */
+  background: antiquewhite;
+}
+
+.filterFiles span{
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+.filterFiles span:hover{
+  border-radius: 5px;
+  color: white;
+  background-color: #4CAF50;
+}
+
+.activeFilter{
+  border-radius: 5px;
+  color: white;
+  background-color: #4CAF50;
+}
+
+
+
+
+
+.filterBody{
+  display: -webkit-inline-box;
+}
+
+.filterBtns{
+  padding: 10px;
+  text-align: -webkit-center;
+  text-align: center;
+  height: 100vh;
+  width: 18%;
+  background: aliceblue;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.filterBtns input{
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  height: 20px;
+}
+
+.filterOutput{
+  width: 75%;
+}
+
+
+
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+
+
+
+.loadMessage{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background: aliceblue;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.loadDiv:hover > input{
+
+}
+
+.loadFile{
+
+  text-align: center;
+  justify-content: center;
+  background: aliceblue;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.loadFile > input{
+  width: 20%;
+  background: red;
+  margin: 5px;
+}

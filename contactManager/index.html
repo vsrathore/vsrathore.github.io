@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./jszip.js"></script>
+    <script src="./xlsx.js"></script> 
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.6/xlsx.full.min.js"></script> -->
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="logo">
+        Contact Manager
+      </div>
+	<div style="float: left; margin-left: 10rem;"> 
+		<label><input type="text" name="fltr" value="" onkeyup="getAllData(this.value)" style="width: 20rem; border-radius: 7px; border-style: hidden; height: 23px;"></label>
+	</div>  
+      <!-- XLSX file reader object -->
+      <!-- <input type="file" id="file-object"> -->
+
+      <div class="upload-btn-wrapper">
+        <button class="btn">Upload a file</button>
+        <input type="file" id="my_file_input" />
+      </div>
+
+
+
+    </div>
+
+    <div class="filterFiles" id="filterFiles">
+      <!-- <span onclick="selectFile('Script1')" id="Script1">Script1</span> -->
+    </div>
+    <div class="filterFiles" id="filterSheets">
+      <!-- <span onclick="selectSheet('[wb,Script1]')" id="Sheet">Sheet</span> -->
+    </div>
+
+
+
+    <div class="filterBody">
+      <div class="filterBtns" id="filterBtns">
+        <!-- <label>Filter1<input type="text" name="fltr" value="" onkeyup="fltrChanged({filter:0, value:this.value})"></label>
+        <label>Filter2<input type="text" name="fltr" value="" onkeyup="fltrChanged({filter:1, value:this.value})"></label>
+        <label>Filter3<input type="text" name="fltr" value="" onkeyup="fltrChanged({filter:2, value:this.value})"></label>
+        <label>Filter4<input type="text" name="fltr" value="" onkeyup="fltrChanged({filter:3, value:this.value})"></label> -->
+      </div>
+
+      <div class="filterOutput">
+
+        <table id='table'>
+          <!-- <tr> <th>Company</th> <th>Contact</th> <th>Country</th> </tr>
+          <tr> <td>Alfreds Futterkiste</td> <td>Maria Anders</td> <td>Germany</td> </tr>
+          <tr> <td>Centro comercial Moctezuma</td> <td>Francisco Chang</td> <td>Mexico</td> </tr>
+          <tr> <td>Ernst Handel</td> <td>Roland Mendel</td> <td>Austria</td> </tr>
+          <tr> <td>Island Trading</td> <td>Helen Bennett</td> <td>UK</td> </tr>
+          <tr> <td>Laughing Bacchus Winecellars</td> <td>Yoshi Tannamuri</td> <td>Canada</td> </tr>
+          <tr> <td>Magazzini Alimentari Riuniti</td> <td>Giovanni Rovelli</td> <td>Italy</td> </tr> -->
+        </table>
+
+
+
+      </div>
+
+    </div>
+
+
+
+  </body>
+  <script src="./xls.js" charset="utf-8"></script>
+  <script src="./index.js" charset="utf-8"></script>
+</html>
